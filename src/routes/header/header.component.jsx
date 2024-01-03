@@ -7,14 +7,17 @@ import { Fragment, useEffect } from "react";
 const Header = () => {
   useEffect(() => {
     const navList = document.getElementById("nav-list");
+    const profilePic = document.getElementById("profile-pic");
 
+    // const showOptions = () => {
+    //   profilePic.classList.add("active");
+    // };
     const resetLinks = () => {
       const navItems = navList.querySelectorAll(".nav__nav-item");
       for (let i = 0; i < navItems.length; i++) {
         navItems[i].classList.remove("active--link");
       }
     };
-
     let logo = document.getElementById("logo");
     logo.addEventListener("click", () => {
       resetLinks();
@@ -32,6 +35,11 @@ const Header = () => {
           <RoboticsBigLogo className='header__logo--1' />
         </Link>
         <Navigation></Navigation>
+        <img
+          src={require("../../assets/imgs/sqr.jpg")}
+          className='header__profile-pic'
+          id='profile-pic'
+        />
       </header>
       <Outlet />
     </Fragment>
