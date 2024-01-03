@@ -1,0 +1,115 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
+/// DISPLAY ITEM
+.display-item {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  perspective: 200rem;
+  overflow: hidden;
+
+  /// CONTENT
+  &__heading {
+    width: 100%;
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-sub-heading;
+  }
+
+  &__details {
+    width: 90%;
+    text-align: center;
+
+    @include respond(tab-port) {
+      width: 70%;
+      font-size: calc(100% * 1.7);
+      line-height: 3rem;
+    }
+  }
+
+  /// SIDE STYLES
+  &__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+    backface-visibility: hidden;
+
+    // FRONT SIDE
+    &--front {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+
+      &--1 {
+        background-image: $overlay-dark, url(../../assets/imgs/comp-1.jpg);
+      }
+      &--2 {
+        background-image: $overlay-dark, url(../../assets/imgs/comp-2.jpg);
+      }
+      &--3 {
+        background-image: $overlay-dark, url(../../assets/imgs/comp-3.jpg);
+      }
+    }
+
+    // BACK SIDE
+    &--back {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 8rem 1rem;
+      background-color: rgba($color-white, 0.1);
+      transform: rotateY(180deg);
+
+      & .btn-group {
+        flex-direction: column;
+        align-items: stretch;
+
+        @include respond(tab-port) {
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+
+        @include respond(phone) {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .btn--red {
+          margin-right: 0;
+          margin-bottom: 1.5rem;
+
+          @include respond(tab-land) {
+            margin-bottom: 0rem;
+          }
+
+          @include respond(tab-port) {
+            margin-right: 3rem;
+          }
+
+          @include respond(phone) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  /// SWITCH BETWEEN FRONT AND BACK SIDES
+  &:hover .display-item__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover .display-item__side--back {
+    transform: rotateY(0);
+  }
+}

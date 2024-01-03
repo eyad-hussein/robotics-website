@@ -1,0 +1,15 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
+@import "../../styles/base/utilities";
+  
+  //// POSTS-SECTION
+  .posts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  

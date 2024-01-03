@@ -1,0 +1,7 @@
+/// NAVLINK
+.nav__nav-link:link,
+.nav__nav-link:visited {
+    color: currentColor;
+    text-decoration: none;
+    transition: color 0.3s;
+}

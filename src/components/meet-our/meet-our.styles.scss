@@ -1,0 +1,61 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
+
+//// GENERAL GRID
+.general-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5rem;
+  padding-top: 5rem;
+
+  @include respond(phone) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(xs-phone) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 8rem;
+  }
+}
+
+/// GRID ITEM
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__img-box {
+    max-width: 20rem;
+    max-height: 20rem;
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px $color-grey-2;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    background-size: cover;
+    transition:
+      transform 0.2s,
+      filter 0.2s;
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(110%);
+    }
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  &__disc {
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: $color-primary-1;
+    letter-spacing: 0.25rem;
+    filter: brightness(70%);
+  }
+}

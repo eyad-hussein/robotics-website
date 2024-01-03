@@ -1,0 +1,104 @@
+//// TEXT UTILS
+.u-center-text {
+  text-align: center !important;
+}
+
+//// SPACING UTILS
+
+/// MARGIN
+.u-margin-bottom-xs {
+  margin-bottom: 0.5rem !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1rem !important;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 2.5rem !important;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 5.5rem !important;
+}
+
+.u-margin-bottom-large {
+  margin-bottom: 7.5rem !important;
+}
+
+.u-margin-0 {
+  margin: 0 !important;
+}
+
+/// PADDING
+.u-padding-0 {
+  padding: 0 !important;
+}
+
+//// POSITION
+.posToBottom {
+  bottom: 0;
+}
+
+.resetPos {
+  position: static;
+}
+
+//// DISPLAY
+.hidden {
+  display: none;
+}
+
+//// HELPER CLASSES
+
+/// ACTIVE LINK
+.active {
+  &--link {
+    color: $color-primary-1 !important;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin-top: 5px !important;
+      background-color: $color-primary-1;
+      transform: scaleX(1) !important;
+    }
+  }
+}
+
+.helper-class {
+  /// HANDOUTS
+  &--handouts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /// HAM-BUTTON
+  &--ham-btn {
+    right: 3rem !important;
+    top: 4rem !important;
+
+    &::after,
+    &::before,
+    .ham-btn__line {
+      width: 3rem !important;
+      height: 5px !important;
+
+      @include respond(in-between-tab) {
+        width: 3.5rem !important;
+        height: 4.5px !important;
+      }
+    }
+
+    &::after {
+      top: 2rem !important;
+    }
+  }
+
+  &--workshops-left-arrow {
+    transform: translate(-40%, -50%) !important;
+  }
+}

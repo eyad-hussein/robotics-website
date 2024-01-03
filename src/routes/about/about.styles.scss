@@ -1,0 +1,51 @@
+@import "../../styles/abstracts/mixins.scss";
+//// MAIN SECTION
+.main-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &__intro {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+
+  &__mission-vision {
+    display: flex;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    max-width: 60%;
+    font-size: 2rem;
+    line-height: 3rem;
+    opacity: 0.7;
+  }
+
+  @include respond(tab-land) {
+    margin-top: 2rem;
+  }
+
+  @include respond(tab-port) {
+    margin-top: 0;
+  }
+
+  @include respond(phone) {
+    margin-top: 5rem;
+
+    &__vision {
+      margin-top: 5rem;
+    }
+  }
+}
+
+//// ADVISORS & BOARD SECTIONS
+.advisors-section,
+.board-section {
+  margin-top: 10rem;
+  text-align: center;
+}

@@ -1,0 +1,41 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
+//// BIG HERO SECTION
+.big-hero-section {
+  display: flex;
+  align-items: center;
+
+  @include respond(phone) {
+    margin-top: 5rem;
+  }
+}
+
+.big-hero {
+  &__slogan {
+    width: 60%;
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 7rem;
+    letter-spacing: 0.25rem;
+
+    span {
+      color: $color-primary-1;
+    }
+
+    @include respond(phone) {
+      max-width: 90%;
+      margin: 0 auto;
+      font-size: 4.5rem;
+      line-height: 6rem;
+      text-align: center;
+    }
+  }
+  &__img {
+    width: 40%;
+    transform: translateX(20%);
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+}
