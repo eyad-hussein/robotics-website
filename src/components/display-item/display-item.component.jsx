@@ -12,7 +12,9 @@ const DisplayItem = ({ title, content, number }) => {
         <h1 class='display-item__heading'>{title}</h1>
         <p class='display-item__details text--small'>{content}</p>
         <div class='btn-group'>
-          <a class='btn btn--red'>Participate Now!</a>
+          <a href='/' class='btn btn--red'>
+            Participate Now!
+          </a>
           <a class='btn btn--white' href='./workshops_handouts.html'>
             More Info
           </a>
