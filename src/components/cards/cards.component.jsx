@@ -1,18 +1,20 @@
-import './cards.styles.scss';
-import Card from '../card/card.component';
+import "./cards.styles.scss";
+import { api } from "../../services/http_request.jsx";
+import Card from "../card/card.component";
+import React, { useEffect, useState } from "react";
+import moment from "moment";
+import { WorkshopsRepository } from "../../services/api.jsx";
+const content =
+  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, similique! Ipsum fugit repudiandae dignissimos aspernatur architecto nihil, quibusdam expedita culpa est illum excepturi autem ullam rerum quis odio et. Est.";
 
-const content = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, similique! Ipsum fugit repudiandae dignissimos aspernatur architecto nihil, quibusdam expedita culpa est illum excepturi autem ullam rerum quis odio et. Est.";
-
-const Cards = () => {
-    return (
-        <section class="cards-section">
-        <div class="cards-container">
-            <Card id="1" title="solidworks" content={content} date="Feb 16th, 2023" location="HQ" duration="8 weeks"/>
-            <Card id="2" title="pcb design" content={content} date="Feb 16th, 2023" location="HQ" duration="8 weeks"/>
-            <Card id="3" title="ros" content={content} date="Feb 16th, 2023" location="HQ" duration="8 weeks"/>
-        </div>
-      </section>
-    );
-}
+const Cards = ({ activeWorkshops }) => {
+  return (
+    <section className='cards-section'>
+      {activeWorkshops.map(function (activeWorkshop) {
+        return <Card activeWorkshop={activeWorkshop} />;
+      })}
+    </section>
+  );
+};
 
 export default Cards;

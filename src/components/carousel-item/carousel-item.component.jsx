@@ -1,12 +1,12 @@
-import './carousel-item.styles.scss';
+import "./carousel-item.styles.scss";
 
-const CarouselItem = ({src, alt}) => {
-
-    return (
-        <div class="carousel__img-box">
-            <img class="carousel__img" src={src} alt={alt} />
-        </div>
-    );
-}
+const CarouselItem = ({ image }) => {
+  console.log(image, "image");
+  return (
+    <div className='carousel__img-box'>
+      <img className='carousel__img' src={image} alt='Carousel Item' />
+    </div>
+  );
+};
 
 export default CarouselItem;

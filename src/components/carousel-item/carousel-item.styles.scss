@@ -1,25 +1,24 @@
 @import "../../styles/abstracts/variables";
 @import "../../styles/abstracts/mixins";
 
-
 .carousel__img-box {
-    @include overlay(dark, 0.8);
+  @include overlay(dark, 0.8);
 
-    flex: 1 0 100%;
-    border-radius: 2px;
-    overflow: hidden;
+  flex: 1 0 100%;
+  border-radius: 2px;
+  overflow: hidden;
 
-    &:hover {
+  &:hover {
     & img {
-        transform: scale(1.05);
-        filter: brightness(1.1);
+      transform: scale(1.05);
+      filter: brightness(1.1);
     }
-    }
+  }
 }
 
 .carousel__img {
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-    transition: transform 0.2s;
+  width: 100%;
+  object-position: center;
+  background-size: cover;
+  transition: transform 0.2s;
 }
