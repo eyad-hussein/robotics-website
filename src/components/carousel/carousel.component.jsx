@@ -27,16 +27,16 @@ const Carousel = ({ images }) => {
 
   return (
     // <!-- CAROUSEL -->
-    <div class='carousel-container'>
-      <div class='carousel' id='carousel'>
+    <div className='carousel-container'>
+      <div className='carousel' id='carousel'>
         {images &&
           images.map((image, index) => (
             <CarouselItem key={index} image={image.url} />
           ))}
-        <button class='slide-arrow' id='slide-arrow-prev'>
+        <button className='slide-arrow' id='slide-arrow-prev'>
           &#8249;
         </button>
-        <button class='slide-arrow' id='slide-arrow-next'>
+        <button className='slide-arrow' id='slide-arrow-next'>
           &#8250;
         </button>
       </div>

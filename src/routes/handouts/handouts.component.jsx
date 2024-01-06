@@ -16,18 +16,19 @@ const content =
 const Handouts = () => {
   const { id } = useParams();
   const [workshop, setWorkshop] = useState([]);
+  const [materialsImages, setMaterialImages] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await WorkshopsRepository.getWorkshop(id);
-      setWorkshop(response);
-      console.log(response, "response");
+      setWorkshop(response.workshop);
+      setMaterialImages(response.materialsImages);
     };
     fetchData();
   }, []);
-  console.log(workshop, "workshop");
   return (
     <Fragment>
-      <main class='main'>
+      <main className='main'>
         <HeaderSection title={workshop.title} content={workshop.description}>
           <Button type='red' content='Participate Now!' to=''></Button>
         </HeaderSection>
@@ -37,37 +38,25 @@ const Handouts = () => {
         </section>
 
         <Fragment>
-          <h1 class='u-margin-bottom-large'>Materials Used</h1>
+          <h1 className='u-margin-bottom-large'>Materials Used</h1>
           <Window>
-            <Project
-              src={require("../../assets/imgs/project.jpg")}
-              alt=''
-              title='Lorem Ipsum'
-              content={content}
-            />
-            <Project
-              src={require("../../assets/imgs/project.jpg")}
-              alt=''
-              title='Lorem Ipsum'
-              content={content}
-            />
-            <Project
-              src={require("../../assets/imgs/project.jpg")}
-              alt=''
-              title='Lorem Ipsum'
-              content={content}
-            />
-            <Project
-              src={require("../../assets/imgs/project.jpg")}
-              alt=''
-              title='Lorem Ipsum'
-              content={content}
-            />
+            {workshop.materials &&
+              workshop.materials.map((material, index) => {
+                console.log(materialsImages[index], "material");
+                return (
+                  <Project
+                    state={{
+                      material: material,
+                      materialImage: materialsImages[index],
+                    }}
+                  />
+                );
+              })}
           </Window>
         </Fragment>
 
-        <section class='recorded-section'>
-          <h1 class='u-margin-bottom-large'>Recorded Sessions</h1>
+        <section className='recorded-section'>
+          <h1 className='u-margin-bottom-large'>Recorded Sessions</h1>
 
           <Window>
             <div className='sessions-container'>

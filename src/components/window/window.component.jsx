@@ -1,13 +1,7 @@
-import './window.styles.scss';
+import "./window.styles.scss";
 
-const Window = ( { children } ) => {
-    return (
-        <div class="window">
-            {
-                children
-            }
-        </div>
-    );
-}
+const Window = ({ children }) => {
+  return <div className='window'>{children}</div>;
+};
 
 export default Window;

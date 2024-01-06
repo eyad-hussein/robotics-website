@@ -7,8 +7,8 @@ const content = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Archi
 const Competitions = () => {
   return (
     <Fragment>
-      <main class='main'>
-        <div class='display-container'>
+      <main className='main'>
+        <div className='display-container'>
           <DisplayItem title='competition 1' content={content} number='1' />
           <DisplayItem title='competition 1' content={content} number='2' />
           <DisplayItem title='competition 1' content={content} number='3' />

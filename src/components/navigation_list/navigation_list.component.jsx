@@ -17,7 +17,6 @@ const NavList = () => {
 
       if (element.tagName === "A") {
         resetLinks();
-        console.log("ho");
         element.parentNode.classList.add("active--link");
       }
     };

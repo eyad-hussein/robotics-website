@@ -3,8 +3,8 @@ import { ReactComponent as RoboticsSmallWhiteLogo } from "../../assets/logos/ico
 
 const BigHero = () => {
   return (
-    <section class='big-hero-section'>
-      <h1 class='big-hero__slogan'>
+    <section className='big-hero-section'>
+      <h1 className='big-hero__slogan'>
         Manually <span>Controlled,</span> Better
         <span> Automated.</span>
       </h1>

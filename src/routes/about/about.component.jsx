@@ -7,12 +7,12 @@ import { Fragment } from "react";
 
 const MainSection = () => {
   return (
-    <section class='main-section'>
+    <section className='main-section'>
       {/* <!-- INTRO --> */}
-      <div class='main-section__intro'>
-        <h2 class='u-margin-bottom-medium'>Introduction</h2>
+      <div className='main-section__intro'>
+        <h2 className='u-margin-bottom-medium'>Introduction</h2>
 
-        <p class='main-section__text'>
+        <p className='main-section__text'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa
           metus, efficitur ut iaculis quis, sodales sed velit. Lorem ipsum dolor
           sit amet, consectetur adipiscing elit. Donec massa metus, efficitur ut
@@ -21,12 +21,12 @@ const MainSection = () => {
       </div>
 
       {/* <!-- MISSION & VISION --> */}
-      <div class='main-section__mission-vision'>
+      <div className='main-section__mission-vision'>
         {/* <!-- MISSION --> */}
-        <div class='main-section__mission'>
-          <h2 class='u-margin-bottom-medium'>Mission</h2>
+        <div className='main-section__mission'>
+          <h2 className='u-margin-bottom-medium'>Mission</h2>
 
-          <p class='main-section__text'>
+          <p className='main-section__text'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa
             metus, efficitur ut iaculis quis, sodales sed velit. Lorem ipsum
             dolor sit amet, consectetur adipiscing elit. Donec massa metus,
@@ -35,10 +35,10 @@ const MainSection = () => {
         </div>
 
         {/* <!-- VISION --> */}
-        <div class='main-section__vision'>
-          <h2 class='u-margin-bottom-medium'>Vision</h2>
+        <div className='main-section__vision'>
+          <h2 className='u-margin-bottom-medium'>Vision</h2>
 
-          <p class='main-section__text'>
+          <p className='main-section__text'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa
             metus, efficitur ut iaculis quis, sodales sed velit. Lorem ipsum
             dolor sit amet, consectetur adipiscing elit. Donec massa metus,
@@ -109,16 +109,16 @@ const SPONSORS = [
 const About = () => {
   return (
     <Fragment>
-      <main class='main'>
+      <main className='main'>
         <BigHero />
         <MainSection />
 
-        <section class='advisors-section'>
+        <section className='advisors-section'>
           <h2>Meet Our Advisors</h2>
           <MeetOur body={BODY} />
         </section>
 
-        <section class='board-section'>
+        <section className='board-section'>
           <h2>Meet Our Highboard</h2>
           <MeetOur body={BODY} />
         </section>

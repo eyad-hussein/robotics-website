@@ -1,21 +1,21 @@
-import './project.styles.scss';
+import "./project.styles.scss";
 
-const Project = ({src, alt, title, content}) => {
-    return (
-        <div class="project">
-            <div class="project__img-box">
-                <img src={src} alt={alt} class="project__img" />
-            </div>
-            <div class="project__disc-box">
-                <h3 class="project__heading u-margin-bottom-medium">
-                {title}
-                </h3>
-                <p class="project__disc">
-                {content}
-                </p>
-            </div>
-        </div>
-    );
-}
+const Project = ({ state }) => {
+  const { material, materialImage } = state;
+  const { title, description } = material;
+  const src = materialImage;
+
+  return (
+    <div className='project'>
+      <div className='project__img-box'>
+        <img src={src} alt='hi' className='project__img' />
+      </div>
+      <div className='project__disc-box'>
+        <h3 className='project__heading u-margin-bottom-medium'>{title}</h3>
+        <p className='project__disc'>{description}</p>
+      </div>
+    </div>
+  );
+};
 
 export default Project;
