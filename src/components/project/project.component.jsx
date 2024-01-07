@@ -3,12 +3,13 @@ import "./project.styles.scss";
 const Project = ({ state }) => {
   const { material, materialImage } = state;
   const { title, description } = material;
-  const src = materialImage;
+  const src = materialImage.url;
+  const alt = materialImage.alt;
 
   return (
     <div className='project'>
       <div className='project__img-box'>
-        <img src={src} alt='hi' className='project__img' />
+        <img src={src} alt={alt} className='project__img' />
       </div>
       <div className='project__disc-box'>
         <h3 className='project__heading u-margin-bottom-medium'>{title}</h3>

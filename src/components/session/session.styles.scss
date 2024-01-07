@@ -2,109 +2,110 @@
 @import "../../styles/abstracts/variables";
 //// RECORDED SESSIONS CONTAINER
 .sessions-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    gap: 6.5rem;
-    padding-top: 5rem;
-  
-    @include respond(tab-port) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    @include respond(phone) {
-      grid-template-columns: 1fr;
-    }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 6.5rem;
+  padding-top: 5rem;
+
+  @include respond(tab-port) {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  /// RECORDED SESSION
-  .session-card {
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/// RECORDED SESSION
+.session-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: $box-shadow-3--light;
+  overflow: hidden;
+  cursor: pointer;
+
+  @include respond(phone) {
+    width: 70%;
+  }
+
+  &__img-box {
     position: relative;
     width: 100%;
-    border-radius: 10px;
-    box-shadow: $box-shadow-3--light;
-    overflow: hidden;
-    cursor: pointer;
-  
-    @include respond(phone) {
-      width: 70%;
-    }
-  
-    &__img-box {
-      position: relative;
-      width: 100%;
-      max-height: 100%;
-  
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: block;
-        background-image: linear-gradient(
-          to top left,
-          rgba(white, 0.4) 0%,
-          rgba(white, 0.4) 25%,
-          rgba(white, 0.3) 25%,
-          rgba(white, 0.3) 50%,
-          rgba(white, 0.2) 50%,
-          rgba(white, 0.2) 75%,
-          rgba(white, 0.1) 75%,
-          rgba(white, 0.1) 100%
-        );
-        opacity: 0.5;
-        z-index: 1;
-      }
-    }
-  
-    &__img {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.2s;
-      backface-visibility: hidden;
-    }
-  
-    &__disc {
+    height: 100%;
+
+    &::before {
+      content: "";
       position: absolute;
-      left: 2rem;
-      bottom: 1.2rem;
-      width: 100%;
-      padding: 2rem 4rem;
-      border-bottom-right-radius: 10px;
-      border-bottom-left-radius: 10px;
-      background-color: rgba($color-black, $alpha: 0.5);
-      font-size: 1.5rem;
-      letter-spacing: 0.2rem;
-      transform: translateY(200%);
-      transition: transform 0.2s ease-out;
-    }
-  
-    & {
-      &:hover &__disc {
-        transform: translate(-7%, 22%) scale(1.02);
-  
-        @include respond(tab-port) {
-          transform: translate(-5%, 22%) scale(1.02);
-        }
-      }
-  
-      &:hover &__img-box &__img {
-        transform: scale(1.05);
-      }
-  
-      &:hover .play-button {
-        transform: translate(-50%, -52%);
-      }
-    }
-  
-    .play-button:active {
-      transform: translate(-50%, -50%);
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      background-image: linear-gradient(
+        to top left,
+        rgba(white, 0.4) 0%,
+        rgba(white, 0.4) 25%,
+        rgba(white, 0.3) 25%,
+        rgba(white, 0.3) 50%,
+        rgba(white, 0.2) 50%,
+        rgba(white, 0.2) 75%,
+        rgba(white, 0.1) 75%,
+        rgba(white, 0.1) 100%
+      );
+      opacity: 0.5;
+      z-index: 1;
     }
   }
-  
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s;
+    backface-visibility: hidden;
+  }
+
+  &__disc {
+    position: absolute;
+    left: 2rem;
+    bottom: 1.2rem;
+    width: 100%;
+    padding: 2rem 4rem;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: rgba($color-black, $alpha: 0.5);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    transform: translateY(200%);
+    transition: transform 0.2s ease-out;
+  }
+
+  & {
+    &:hover &__disc {
+      transform: translate(-7%, 22%) scale(1.02);
+
+      @include respond(tab-port) {
+        transform: translate(-5%, 22%) scale(1.02);
+      }
+    }
+
+    &:hover &__img-box &__img {
+      transform: scale(1.05);
+    }
+
+    &:hover .play-button {
+      transform: translate(-50%, -52%);
+    }
+  }
+
+  .play-button:active {
+    transform: translate(-50%, -50%);
+  }
+}

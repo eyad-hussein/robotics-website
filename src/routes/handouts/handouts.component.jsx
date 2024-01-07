@@ -17,12 +17,14 @@ const Handouts = () => {
   const { id } = useParams();
   const [workshop, setWorkshop] = useState([]);
   const [materialsImages, setMaterialImages] = useState([]);
+  const [sessionsImages, setSessionsImages] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await WorkshopsRepository.getWorkshop(id);
       setWorkshop(response.workshop);
       setMaterialImages(response.materialsImages);
+      setSessionsImages(response.sessionsImages);
     };
     fetchData();
   }, []);
@@ -42,9 +44,10 @@ const Handouts = () => {
           <Window>
             {workshop.materials &&
               workshop.materials.map((material, index) => {
-                console.log(materialsImages[index], "material");
+                // console.log(materialsImages[index], "material");
                 return (
                   <Project
+                    key={material.id}
                     state={{
                       material: material,
                       materialImage: materialsImages[index],
@@ -60,7 +63,19 @@ const Handouts = () => {
 
           <Window>
             <div className='sessions-container'>
-              <Session
+              {workshop.sessions &&
+                workshop.sessions.map((session, index) => {
+                  return (
+                    <Session
+                      key={session.id}
+                      state={{
+                        session: session,
+                        sessionImage: sessionsImages[index],
+                      }}
+                    />
+                  );
+                })}
+              {/* <Session
                 src={require("../../assets/imgs/sqr.jpg")}
                 to=''></Session>
               <Session
@@ -71,7 +86,7 @@ const Handouts = () => {
                 to=''></Session>
               <Session
                 src={require("../../assets/imgs/sqr.jpg")}
-                to=''></Session>
+                to=''></Session> */}
             </div>
           </Window>
         </section>
