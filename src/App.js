@@ -22,11 +22,11 @@ function App() {
             <Route index element={<Home />} />
             <Route path='/workshops' element={<Workshops />} />
             <Route
-              path='/workshops/workshop_handouts/:number'
+              path='/workshops/workshop_handouts/:id'
               element={<Handouts />}
             />
             <Route path='/mekatro' element={<Mekatro />} />
-            <Route path='/mekatro/record/:number' element={<Record />} />
+            <Route path='/mekatro/record/:id' element={<Record />} />
             <Route path='/competitions' element={<Competitions />} />
             <Route path='/projects' element={<Projects />} />
             <Route path='/about' element={<About />} />
