@@ -3,26 +3,25 @@ import CarouselCounter from "../../components/carousel-counter/carousel-counter.
 import Posts from "../../components/posts/posts.component";
 import Footer from "../../components/footer/footer.component";
 import { Fragment } from "react";
-import { api } from "../../services/http_request";
 import { useEffect, useState } from "react";
+import HomePageService from "../../services/home_page_service";
 
 const Home = () => {
-  const [carouselImages, setCarouselImages] = useState([]);
+  const [mainCarouselImages, setMainCarouselImages] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await api.get(`images/active`);
-      const result = response.data;
-      setCarouselImages(result.mainCarouselImages);
-    };
-    fetchData();
-  }, []);
+    setMainCarouselImages(HomePageService.getHomePageCarouselImages());
+  }, [mainCarouselImages]);
   return (
     <Fragment>
       <main className='main u-margin-bottom-big'>
-        {carouselImages.length && <CarouselCounter images={carouselImages} />}
+        {mainCarouselImages.length && (
+          <CarouselCounter images={mainCarouselImages} />
+        )}
 
-        <Posts />
+        {/* {mainPostsImages.length && (
+          <Posts state={{ posts: mainPosts, images: mainPostsImages }} />
+        )} */}
       </main>
 
       <Footer />

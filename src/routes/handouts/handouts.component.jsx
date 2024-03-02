@@ -9,7 +9,7 @@ import Footer from "../../components/footer/footer.component";
 import { Fragment } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { WorkshopsRepository } from "../../services/api";
+// import { WorkshopsRepository } from "../../services/api";
 
 const content =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eaque cumque sit accusamus neque. Tempore odio commodi dolorem ullam, possimus quo maiores molestiae explicabo error. Culpa quasi sequi debitis omnis?";
@@ -19,15 +19,16 @@ const Handouts = () => {
   const [materialsImages, setMaterialImages] = useState([]);
   const [sessionsImages, setSessionsImages] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await WorkshopsRepository.getWorkshop(id);
-      setWorkshop(response.workshop);
-      setMaterialImages(response.materialsImages);
-      setSessionsImages(response.sessionsImages);
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await WorkshopsRepository.getWorkshop(id);
+  //     setWorkshop(response.workshop);
+  //     setMaterialImages(response.materialsImages);
+  //     setSessionsImages(response.sessionsImages);
+  //     console.log(response.workshop);
+  //   };
+  //   fetchData();
+  // }, []);
   return (
     <Fragment>
       <main className='main'>
