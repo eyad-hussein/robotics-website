@@ -31,7 +31,7 @@ const Carousel = ({ images }) => {
       <div className='carousel' id='carousel'>
         {images &&
           images.map((image, index) => (
-            <CarouselItem key={index} image={image.url} />
+            <CarouselItem key={index} image={image} />
           ))}
         <button className='slide-arrow' id='slide-arrow-prev'>
           &#8249;

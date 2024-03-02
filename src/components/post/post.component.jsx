@@ -1,6 +1,10 @@
 import "./post.styles.scss";
 
-const Post = ({ src, alt }) => {
+const Post = ({ state }) => {
+  const { post, image } = state;
+  const { title, description } = post;
+  const src = image.url;
+  const alt = image.alt;
   return (
     <div className='post'>
       <div className='post__img-box'>
@@ -8,14 +12,9 @@ const Post = ({ src, alt }) => {
       </div>
 
       <div className='post__text-container'>
-        <h2 className='heading-secondary u-margin-bottom-small'>Lorem ipsum</h2>
+        <h2 className='heading-secondary u-margin-bottom-small'>{title}</h2>
 
-        <p className='text--small'>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic
-          consectetur exercitationem corrupti voluptate alias placeat,
-          voluptates minus facilis autem accusamus. Perferendis alias natus
-          maiores, cumque aperiam voluptates voluptas sapiente pariatur!
-        </p>
+        <p className='text--small'>{description}</p>
       </div>
     </div>
   );

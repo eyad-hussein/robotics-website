@@ -1,5 +1,4 @@
 import "./cards.styles.scss";
-import { api } from "../../services/http_request.jsx";
 import Card from "../card/card.component";
 import React, { useEffect, useState } from "react";
 import moment from "moment";
@@ -10,9 +9,9 @@ const content =
 const Cards = ({ activeWorkshops }) => {
   return (
     <section className='cards-section'>
-      {activeWorkshops.map(function (activeWorkshop) {
+      {/* {activeWorkshops.map(function (activeWorkshop) {
         return <Card activeWorkshop={activeWorkshop} />;
-      })}
+      })} */}
     </section>
   );
 };
