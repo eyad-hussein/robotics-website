@@ -1,6 +1,5 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-
-import { AuthProvider } from "./contexts/auth_context";
+import { Provider as ReduxProvider } from "react-redux";
 import Header from "./routes/header/header.component";
 import Home from "./routes/home/home.component";
 import Workshops from "./routes/workshops/workshops.component";
@@ -12,15 +11,20 @@ import About from "./routes/about/about.component";
 import Competitions from "./routes/competitions/competitions.component";
 import SignUp from "./routes/signup/signup.component";
 import Login from "./routes/login/login.component";
+import store from "./store/configure_store";
+import TestComponent from "./test/test";
+
+// require("dotenv").config();
+// console.log(process.env); // remove this after you've confirmed it is working
 
 function App() {
   return (
-    <AuthProvider>
+    <ReduxProvider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Header />}>
-            <Route index element={<Home />} />
-            <Route path='/workshops' element={<Workshops />} />
+          {/* <Route path='/' element={<Header />}> */}
+          <Route path='/' element={<Home />} />
+          {/* <Route path='/workshops' element={<Workshops />} />
             <Route
               path='/workshops/workshop_handouts/:id'
               element={<Handouts />}
@@ -31,12 +35,20 @@ function App() {
             <Route path='/projects' element={<Projects />} />
             <Route path='/about' element={<About />} />
             <Route path='/register' element={<SignUp />} />
-            <Route path='/login' element={<Login />} />
-          </Route>
+            <Route path='/login' element={<Login />} /> */}
+          {/* </Route> */}
         </Routes>
       </BrowserRouter>
-    </AuthProvider>
+    </ReduxProvider>
   );
 }
+
+// function App() {
+//   return (
+//     <ReduxProvider store={store}>
+//       <TestComponent></TestComponent>;
+//     </ReduxProvider>
+//   );
+// }
 
 export default App;
