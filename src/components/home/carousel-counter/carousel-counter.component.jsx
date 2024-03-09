@@ -1,6 +1,6 @@
 import "./carousel-counter.styles.scss";
-import Carousel from "../carousel/carousel.component";
-import Counter from "../counter/counter.component";
+import Carousel from "../../carousel/carousel.component";
+import Counter from "./counter/counter.component";
 
 const CarouselCounter = ({ images, metaData }) => {
   const { members, participants, projects } = metaData;

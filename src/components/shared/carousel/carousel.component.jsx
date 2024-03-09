@@ -1,5 +1,5 @@
 import "./carousel.styles.scss";
-import CarouselItem from "../carousel-item/carousel-item.component";
+import CarouselItem from "../home/carousel-counter/carousel-item/carousel-item.component";
 import { useEffect } from "react";
 
 const Carousel = ({ images }) => {

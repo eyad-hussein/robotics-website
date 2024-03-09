@@ -1,5 +1,5 @@
 import "./card.styles.scss";
-import { Button } from "../button/button.component";
+import { Button } from "../../../shared/button/button.component";
 
 const Card = ({ activeWorkshop }) => {
   const { id, title, description, date, location, duration } = activeWorkshop;
