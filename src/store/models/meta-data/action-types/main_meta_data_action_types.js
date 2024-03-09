@@ -1,0 +1,2 @@
+export const GET_MAIN_META_DATA_SUCCESS =
+  "meta-data/GET_MAIN_META_DATA_SUCCESS";

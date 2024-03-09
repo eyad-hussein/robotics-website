@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getMainPosts } from "../store/models/post/actions/main_post_actions";
+// import { getMainPosts } from "../store/models/post/actions/main_post_actions";
 
 const TestComponent = () => {
-  const dispatch = useDispatch();
-  const { posts, loading, error } = useSelector((state) => state.posts);
+  // const dispatch = useDispatch();
+  // const { posts, loading, error } = useSelector((state) => state.posts);
 
   // console.log(
   //   "https://s3.eu-central-1.amazonaws.com/robotics.ejust.edu.eg/" +
@@ -11,7 +11,7 @@ const TestComponent = () => {
   // );
   return (
     <div>
-      {process.env.REACT_APP_PRE_LINK}
+      {/* {process.env.REACT_APP_PRE_LINK} */}
       <h1>
         {/* <img
           src={
@@ -34,7 +34,7 @@ const TestComponent = () => {
           ))} */}
       </h1>
 
-      <button onClick={() => dispatch(getMainPosts())}>HOLLA</button>
+      {/* <button onClick={() => dispatch(getMainPosts())}>HOLLA</button> */}
     </div>
   );
 };
