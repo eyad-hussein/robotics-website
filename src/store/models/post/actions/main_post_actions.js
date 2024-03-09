@@ -1,6 +1,11 @@
 import * as actionTypes from "../action-types/main_post_action_types";
 import HomePageRepository from "../../../../repositories/home_page_repository";
 import HomePageService from "../../../../services/home_page_service";
+import {
+  getRequest,
+  getError,
+  getSuccess,
+} from "../../shared/actions/shared_actions";
 
 export const getMainPostsRequest = () => ({
   type: actionTypes.GET_MAIN_POSTS_REQUEST,
@@ -18,7 +23,7 @@ export const getMainPostsError = (error) => ({
 
 export const getMainPosts = () => {
   return async (dispatch) => {
-    dispatch(getMainPostsRequest());
+    dispatch(getRequest());
 
     try {
       const response = await HomePageRepository.getHomePagePosts();
@@ -26,8 +31,9 @@ export const getMainPosts = () => {
       dispatch(
         getMainPostsSuccess(HomePageService.sortHomePagePosts(response))
       );
+      dispatch(getSuccess());
     } catch (error) {
-      dispatch(getMainPostsError(error));
+      dispatch(getError(error));
     }
   };
 };

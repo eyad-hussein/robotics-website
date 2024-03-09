@@ -1,3 +1,5 @@
+import { getRequest, getError } from "../../shared/actions/shared_actions";
+
 import * as actionTypes from "../action-types/main_carousel_image_action_types";
 import HomePageRepository from "../../../../repositories/home_page_repository";
 
@@ -17,13 +19,13 @@ export const getMainCarouselImagesError = (error) => ({
 
 export const getMainCarouselImages = () => {
   return async (dispatch) => {
-    dispatch(getMainCarouselImagesRequest());
+    dispatch(getRequest());
 
     try {
       const response = await HomePageRepository.getHomePageCarouselImages();
       dispatch(getMainCarouselImagesSuccess(response));
     } catch (error) {
-      dispatch(getMainCarouselImagesError(error));
+      dispatch(getError(error));
     }
   };
 };

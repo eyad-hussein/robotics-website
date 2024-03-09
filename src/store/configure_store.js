@@ -1,6 +1,6 @@
-import { combineReducers } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import rootPostReducer from "./models/post/reducers/root_post_reducer";
+import sharedReducer from "./models/shared/reducers/shared_reducer";
 
 // const rootReducer = combineReducers({
 //   posts: postReducer,
@@ -9,6 +9,7 @@ import rootPostReducer from "./models/post/reducers/root_post_reducer";
 const store = configureStore({
   reducer: {
     post: rootPostReducer,
+    shared: sharedReducer,
   },
 });
 
