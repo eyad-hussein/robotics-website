@@ -30,8 +30,8 @@ const Carousel = ({ images }) => {
     <div className='carousel-container'>
       <div className='carousel' id='carousel'>
         {images &&
-          images.map((image, index) => (
-            <CarouselItem key={index} image={image} />
+          images.map((image) => (
+            <CarouselItem key={image.image.id} image={image.image} />
           ))}
         <button className='slide-arrow' id='slide-arrow-prev'>
           &#8249;

@@ -1,34 +1,18 @@
-import { getRequest, getError } from "../../shared/actions/shared_actions";
-
 import * as actionTypes from "../action-types/main_carousel_image_action_types";
-import HomePageRepository from "../../../../repositories/home_page_repository";
 
 export const getMainCarouselImagesRequest = () => ({
   type: actionTypes.GET_MAIN_CAROUSEL_IMAGES_REQUEST,
 });
 
-export const getMainCarouselImagesSuccess = (posts) => ({
+export const getMainCarouselImagesSuccess = (images) => ({
   type: actionTypes.GET_MAIN_CAROUSEL_IMAGES_SUCCESS,
-  payload: posts,
+  payload: images,
 });
 
 export const getMainCarouselImagesError = (error) => ({
   type: actionTypes.GET_MAIN_CAROUSEL_IMAGES_ERROR,
   payload: error,
 });
-
-export const getMainCarouselImages = () => {
-  return async (dispatch) => {
-    dispatch(getRequest());
-
-    try {
-      const response = await HomePageRepository.getHomePageCarouselImages();
-      dispatch(getMainCarouselImagesSuccess(response));
-    } catch (error) {
-      dispatch(getError(error));
-    }
-  };
-};
 
 export const addMainCarouselImageRequest = () => ({
   type: actionTypes.ADD_MAIN_CAROUSEL_IMAGE_REQUEST,

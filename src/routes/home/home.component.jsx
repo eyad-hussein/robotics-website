@@ -12,17 +12,20 @@ import {
 } from "../../store/models/shared/selectors/shared_selectors";
 import { selectMainPosts } from "../../store/models/post/selectors/main_post_selector";
 import { selectMainMetaData } from "../../store/models/meta-data/selectors/main_meta_data_selector";
+import { selectMainCarouselImages } from "../../store/models/image/selectors/main_carousel_image";
 
 const Home = () => {
   const dispatch = useDispatch();
   const { posts } = useSelector(selectMainPosts);
   const { metaData } = useSelector(selectMainMetaData);
+  const { mainImages } = useSelector(selectMainCarouselImages);
   const error = useSelector(selectError);
   const loading = useSelector(selectLoading);
 
   useEffect(() => {
-    // dispatch(HomePageService.getMainPosts());
+    // dispatch(HomePageService.getCarouselImages());
     dispatch(HomePageService.getMetaData());
+    // dispatch(HomePageService.getMainPosts());
   }, [dispatch]);
 
   if (loading) {
@@ -36,7 +39,9 @@ const Home = () => {
   return (
     <Fragment>
       <main className='main u-margin-bottom-big'>
-        {metaData != undefined && <CarouselCounter metaData={metaData} />}
+        {metaData != undefined && mainImages != undefined && (
+          <CarouselCounter metaData={metaData} images={mainImages} />
+        )}
 
         {posts.length && <Posts posts={posts} />}
       </main>
