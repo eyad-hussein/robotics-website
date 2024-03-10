@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import DisplayItem from "../../components/display-item/display-item.component";
+import DisplayItem from "../../components/competitions/display-item/display-item.component";
 import "./competitions.styles.scss";
 
 const content = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto repellat, repellendus repudiandae et quo explicabo. Exercitationem nemo, eius magnam quidem voluptatem odit, dolores tenetur voluptate dicta, nam autem delectus eveniet?`;

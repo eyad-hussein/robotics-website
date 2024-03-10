@@ -1,9 +1,9 @@
 // import './workshops.styles.scss';
 import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
-import HeaderSection from "../../components/header-section/header-section.component";
-import Cards from "../../components/cards/cards.component";
-import Footer from "../../components/footer/footer.component";
+import HeaderSection from "../../components/shared/header-section/header-section.component";
+import Cards from "../../components/workshops/cards/cards.component";
+import Footer from "../../components/shared/footer/footer.component";
 import { WorkshopsRepository } from "../../services/api";
 import { useEffect, useState } from "react";
 

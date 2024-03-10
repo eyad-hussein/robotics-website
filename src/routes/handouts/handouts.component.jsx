@@ -1,11 +1,11 @@
 import "./handouts.styles.scss";
-import HeaderSection from "../../components/header-section/header-section.component";
-import { Button } from "../../components/button/button.component";
-import Carousel from "../../components/carousel/carousel.component";
-import Window from "../../components/window/window.component";
-import Project from "../../components/project/project.component";
-import Session from "../../components/session/session.component";
-import Footer from "../../components/footer/footer.component";
+import HeaderSection from "../../components/shared/header-section/header-section.component";
+import { Button } from "../../components/shared/button/button.component";
+import Carousel from "../../components/shared/carousel/carousel.component";
+import Window from "../../components/shared/window/window.component";
+import Project from "../../components/projects/project/project.component";
+import Session from "../../components/shared/session/session.component";
+import Footer from "../../components/shared/footer/footer.component";
 import { Fragment } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";

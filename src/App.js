@@ -9,8 +9,8 @@ import Record from "./routes/record/record.component";
 import Projects from "./routes/projects/projects.component";
 import About from "./routes/about/about.component";
 import Competitions from "./routes/competitions/competitions.component";
-import SignUp from "./routes/signup/signup.component";
-import Login from "./routes/login/login.component";
+import SignUp from "./routes/auth/signup/signup.component";
+import Login from "./routes/auth/login/login.component";
 import store from "./store/configure_store";
 import TestComponent from "./test/test";
 

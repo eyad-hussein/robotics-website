@@ -1,7 +1,7 @@
 import "./record.styles.scss";
-import Window from "../../components/window/window.component";
-import { PlayButton } from "../../components/button/button.component";
-import Footer from "../../components/footer/footer.component";
+import Window from "../../components/shared/window/window.component";
+import { PlayButton } from "../../components/shared/button/button.component";
+import Footer from "../../components/shared/footer/footer.component";
 import { Fragment } from "react";
 
 const Video = ({ thumbnail, alt, discription }) => {
