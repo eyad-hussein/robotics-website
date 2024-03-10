@@ -1,8 +1,8 @@
 import "./about.styles.scss";
-import BigHero from "../../components/big-hero/big-hero.component";
-import MeetOur from "../../components/meet-our/meet-our.component";
-import Sponsors from "../../components/sponsors/sponsors.component";
-import Footer from "../../components/footer/footer.component";
+import BigHero from "../../components/about/big-hero/big-hero.component";
+import MeetOur from "../../components/about/meet-our/meet-our.component";
+import Sponsors from "../../components/about/sponsors/sponsors.component";
+import Footer from "../../components/shared/footer/footer.component";
 import { Fragment } from "react";
 
 const MainSection = () => {

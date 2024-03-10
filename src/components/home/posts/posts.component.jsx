@@ -1,5 +1,5 @@
 import "./posts.styles.scss";
-import Post from "../post/post.component";
+import Post from "./post/post.component";
 
 const Posts = ({ posts }) => {
   return (

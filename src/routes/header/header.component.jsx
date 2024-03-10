@@ -1,14 +1,14 @@
 import "./header.styles.scss";
-import Navigation from "../../components/navigation/navigation.component";
+import Navigation from "../../components/shared/navigation/navigation.component";
 import { ReactComponent as RoboticsBigLogo } from "../../assets/logos/robo-horizontal-white.svg";
 import { Link, Outlet } from "react-router-dom";
 import { Fragment, useEffect, useState } from "react";
-import { useAuth } from "../../contexts/auth_context";
+// import { useAuth } from "../../contexts/auth_context";
 import TokenHandler from "../../services/token_handler";
 
 const Header = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
-  const { logoutUser } = useAuth();
+  // const { logoutUser } = useAuth();
 
   const handleImageClick = () => {
     setDropdownVisible(!isDropdownVisible);
@@ -17,7 +17,7 @@ const Header = () => {
   const handleOptionClick = async (option) => {
     if (option === "logout") {
       TokenHandler.removeToken("authToken");
-      logoutUser();
+      // logoutUser();
     }
     setDropdownVisible(false);
   };

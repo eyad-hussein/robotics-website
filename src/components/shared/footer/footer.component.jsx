@@ -1,5 +1,5 @@
 import "./footer.styles.scss";
-import { ReactComponent as RoboticsBigLogo } from "../../assets/logos/robo-horizontal-white.svg";
+import { ReactComponent as RoboticsBigLogo } from "../../../assets/logos/robo-horizontal-white.svg";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 

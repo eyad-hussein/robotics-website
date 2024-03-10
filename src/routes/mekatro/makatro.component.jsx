@@ -1,7 +1,7 @@
 import "./mekatro.styles.scss";
-import HeaderSection from "../../components/header-section/header-section.component";
-import Session from "../../components/session/session.component";
-import Footer from "../../components/footer/footer.component";
+import HeaderSection from "../../components/shared/header-section/header-section.component";
+import Session from "../../components/shared/session/session.component";
+import Footer from "../../components/shared/footer/footer.component";
 import { Fragment } from "react";
 
 const content =

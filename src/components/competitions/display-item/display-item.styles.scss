@@ -1,5 +1,5 @@
-@import "../../styles/abstracts/variables";
-@import "../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins";
 /// DISPLAY ITEM
 .display-item {
   position: relative;
@@ -49,13 +49,13 @@
       background-position: center;
 
       &--1 {
-        background-image: $overlay-dark, url(../../assets/imgs/comp-1.jpg);
+        background-image: $overlay-dark, url(../../../assets/imgs/comp-1.jpg);
       }
       &--2 {
-        background-image: $overlay-dark, url(../../assets/imgs/comp-2.jpg);
+        background-image: $overlay-dark, url(../../../assets/imgs/comp-2.jpg);
       }
       &--3 {
-        background-image: $overlay-dark, url(../../assets/imgs/comp-3.jpg);
+        background-image: $overlay-dark, url(../../../assets/imgs/comp-3.jpg);
       }
     }
 

@@ -1,5 +1,5 @@
 import "./big-hero.styles.scss";
-import { ReactComponent as RoboticsSmallWhiteLogo } from "../../assets/logos/icon-white.svg";
+import { ReactComponent as RoboticsSmallWhiteLogo } from "../../../assets/logos/icon-white.svg";
 
 const BigHero = () => {
   return (

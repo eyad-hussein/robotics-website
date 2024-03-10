@@ -1,7 +1,7 @@
 import "./home.styles.scss";
 import HomePageService from "../../services/home_page_service";
-import CarouselCounter from "../../components/carousel-counter/carousel-counter.component";
-import Posts from "../../components/posts/posts.component";
+import CarouselCounter from "../../components/home/carousel-counter/carousel-counter.component";
+import Posts from "../../components/home/posts/posts.component";
 // import Footer from "../../components/footer/footer.component";
 import { Fragment } from "react";
 import { useEffect } from "react";
@@ -33,7 +33,7 @@ const Home = () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    // return <div>Error: {error}</div>;
   }
 
   return (

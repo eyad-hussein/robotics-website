@@ -1,5 +1,5 @@
 import "./carousel-counter.styles.scss";
-import Carousel from "../../carousel/carousel.component";
+import Carousel from "../../shared/carousel/carousel.component";
 import Counter from "./counter/counter.component";
 
 const CarouselCounter = ({ images, metaData }) => {

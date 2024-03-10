@@ -1,7 +1,7 @@
 import "./projects.styles.scss";
-import HeaderSection from "../../components/header-section/header-section.component";
-import Project from "../../components/project/project.component";
-import Footer from "../../components/footer/footer.component";
+import HeaderSection from "../../components/shared/header-section/header-section.component";
+import Project from "../../components/projects/project/project.component";
+import Footer from "../../components/shared/footer/footer.component";
 import { Fragment } from "react";
 
 const Projects = () => {

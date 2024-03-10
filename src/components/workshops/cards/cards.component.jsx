@@ -1,5 +1,5 @@
 import "./cards.styles.scss";
-import Card from "../card/card.component";
+import Card from "./card/card.component";
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import { WorkshopsRepository } from "../../../services/api.jsx";

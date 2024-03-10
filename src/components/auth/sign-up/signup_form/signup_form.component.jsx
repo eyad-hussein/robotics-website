@@ -1,6 +1,6 @@
 import "./signup_form.styles.scss";
 import { useState } from "react";
-import AuthenticationService from "../../services/authentication";
+import AuthenticationService from "../../../../services/authentication";
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
